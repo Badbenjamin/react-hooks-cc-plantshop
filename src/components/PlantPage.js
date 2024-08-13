@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 function PlantPage() {
 
   const [myPlants, setMyPlants] = useState([])
+  const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -14,7 +15,11 @@ function PlantPage() {
     .then(plantData => setMyPlants(plantData))
   }, [])
 
-  // console.log(myPlants)
+  console.log(myPlants)
+
+  const filteredPlants = myPlants.filter(plants => {
+    return plants.name.toUpperCase().includes(searchText.toUpperCase())
+  })
 
   function addPlant(newPlant){
     // console.log(newPlant)
@@ -32,8 +37,8 @@ function PlantPage() {
   return (
     <main>
       <NewPlantForm onAddPlant={addPlant} />
-      <Search />
-      <PlantList myPlants={myPlants}/>
+      <Search setSearchText={setSearchText} />
+      <PlantList myPlants={filteredPlants}/>
     </main>
   );
 }
