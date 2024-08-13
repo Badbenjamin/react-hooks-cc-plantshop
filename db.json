@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "easter lily cactus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Echinopsis_subdenudata_1.JPG",
+      "price": 0.34,
+      "id": 8
+    },
+    {
+      "name": "easter lily cactus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Echinopsis_subdenudata_1.JPG",
+      "price": "0.34",
+      "id": 9
     }
   ]
 }
